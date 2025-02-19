@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roi</title>
+    <script>
+
+        //delay server request,set clock
+        let time;
+        function delay(){
+            clearTimeout(time)
+            time = setTimeout(function(){
+                intrestCal();
+            }, 1000)
+            console.log(time);
+        }
+        async function intrestCal(){
+            const p = document.getElementById("principal").value;
+            const r = document.getElementById("rate").value;
+            const t = document.getElementById("time").value;
+            const ans = document.getElementById("ans");
+            const response = await fetch("http://localhost:3000/interest?principal="+p+"&rate="+r+"&time="+t);
+            const intrest = await response.text();
+            ans.innerHTML = intrest
+        }
+    </script>
+</head>
+<body>
+    <input oninput="delay()" id="principal" placeholder="Principal" type="text"><br>
+    <input oninput="delay()" id="rate" placeholder="rate" type="text"><br>
+    <input  oninput="delay()" id="time" placeholder="time" type="text"><br>
+    <!-- <button onclick="intrestCal()">Cal Intrest</button> -->
+    <div id="ans"></div>
+</body>
+</html>
