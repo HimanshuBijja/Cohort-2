@@ -1,0 +1,26 @@
+<!-- creates a div -> inserts value into it ->  pushes it back to container -->
+
+<html>
+    <script>
+        function addTodo(){
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            console.log(title);
+            console.log(description);
+
+            const outerDiv = document.createElement("div");
+            outerDiv.innerHTML = title;
+            document.getElementById("container").appendChild(outerDiv) ;
+            
+            
+        }
+    </script>
+    <div>
+      <input  id="title" type="text" placeholder="title">  <br><br>
+      <input  id="description" type="text" placeholder="description"> <br><br>
+      <button onclick="addTodo()">Add todo</button> <br><br>
+      <div id="container">
+        
+      </div> 
+    </div>
+</html>
