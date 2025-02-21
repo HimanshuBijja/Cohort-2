@@ -1,0 +1,56 @@
+
+<html>
+    <script>
+        let globalId = 0;
+
+
+        function createTodo(title, description, globalId){
+            const child = document.createElement("div");
+            child.setAttribute("id", globalId)
+
+            const firstGrandChild = document.createElement("div");
+            firstGrandChild.innerHTML = title;
+            const SecondGrandChild = document.createElement("div");
+            SecondGrandChild.innerHTML = description;
+            const thirdGrandChild = document.createElement("button");
+            thirdGrandChild.innerHTML = "Mark as Done";
+            thirdGrandChild.setAttribute("onclick", `markAsDone(${globalId})`)
+            
+            child.appendChild(firstGrandChild);
+            child.appendChild(SecondGrandChild);
+            child.appendChild(thirdGrandChild);
+
+            return child;
+            
+        }
+
+        function updateDomAccToState(state){
+            const parent = document.getElementById("container");
+            parent.innerHTML = "";
+
+            for(let i =0; i<state.length; i++){
+                const todos = createTodo(state[i].title, state[i].description, state[i].id)
+                parent.appendChild(todos);
+            }
+
+        }
+
+        window.setInterval(async function(){
+            const data = await fetch("http://localhost:3000/todos");
+            const json = await data.json();
+            updateDomAccToState(json.todos);
+
+        }, 2000)
+
+    </script>
+    <div>
+      <input  id="title" type="text" placeholder="title">  <br><br>
+      <input  id="description" type="text" placeholder="description"> <br><br>
+      <button onclick="addTodo()">Add todo</button> <br><br>
+      <div id="container">
+
+    
+        
+      </div> 
+    </div>
+</html>
