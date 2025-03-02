@@ -1,0 +1,43 @@
+<html>
+    <body>
+        <div id="buttonHolder">
+
+        </div>
+        
+        <script>
+            const state = {
+                count : 0
+            }
+            function increaseCounter(){
+                state.count++;
+                updateButtonText();
+            }
+            function updateButtonText(){
+                const button = document.getElementById("buttonId");
+                button.innerHTML = `count ${state.count}`;
+
+            }
+            function increaseButtonCount(){
+                const button = document.createElement("button");
+                button.setAttribute("id", "buttonId");
+                button.setAttribute("onclick", "increaseCounter()")
+                button.innerHTML = `count ${state.count}`;
+                // const buttonid = document.getElementById("buttonId");
+                // updateButtonText();
+
+                return button;
+
+            }
+            function getDiv(){
+                const parent = document.getElementById("buttonHolder");
+                parent.innerHTML = "";
+                parent.appendChild( increaseButtonCount());
+            }
+
+            getDiv();
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <div id="buttonHolder">
+
+        </div>
+        <script>
+
+            const state = {
+                count : 0
+            }
+
+            function countIcrease(){
+                state.count++;
+                getbuttonHolder();
+            }
+
+            function getbuttonHolder(count){
+                const parent = document.getElementById("buttonHolder");
+                parent.innerHTML = "";
+                parent.appendChild(createButton(state.count));
+                
+            }
+            
+            function createButton(count){
+                const button =  document.createElement("button");
+                button.innerHTML = `count ${count}`;
+                button.onclick = countIcrease;
+                return button;
+
+            }
+
+
+            getbuttonHolder();
+        </script>
+    </body>
+</html>

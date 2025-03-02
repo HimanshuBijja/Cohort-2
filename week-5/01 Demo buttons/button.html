@@ -1,0 +1,46 @@
+<html>
+
+<body>
+    <div id="buttonParent">
+
+    </div>
+
+    <script>
+        let state = {
+            count : 0
+        }
+
+        function onButtonPress(){
+            state.count++
+            buttonInnerHtml();
+        }
+
+        function buttonInnerHtml(count){
+            const parent = document.getElementById("buttonParent");
+            parent.innerHTML = "";
+            const component = buttonState(state.count)
+            parent.appendChild(component);
+        }
+
+        function buttonState(count){
+
+            const button = document.createElement("button");
+            button.setAttribute("id", "button1")
+            button.innerHTML = `count ${count}`;
+            document.body.appendChild(button);
+            button.setAttribute("onclick", "onButtonPress()")
+            return button;
+        }
+
+        buttonInnerHtml();
+    </script>
+</body>
+
+</html>
+
+
+<!-- div - get inner element 
+increase count
+make button innerhtml = ""
+insert value into button
+appendchile to div -->
