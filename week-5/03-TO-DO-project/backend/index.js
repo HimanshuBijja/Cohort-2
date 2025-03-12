@@ -35,10 +35,10 @@ app.post('/todo',  async (req,res) => {
 
 
 app.get('/todos', async (req,res) => {
-    const alltodos = await todo.find({})
+    const todos = await todo.find({})
 
     res.json({
-        alltodos
+        todos
     })
 
     
