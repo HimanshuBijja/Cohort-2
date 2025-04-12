@@ -2,15 +2,15 @@ const mongoose = require('mongoose')
 
 mongoose.connect("mongodb+srv://bijjahimanshu05:Explore-MongoDB@cluster0.g0j9e.mongodb.net/paytm")
 
-const userSchema = new mongoose.Schema({
-    userName : String,
-    password : String,
-    firstName : String,
-    lastName : String
-});
+// const userSchema = new mongoose.Schema({
+//     username : String,
+//     password : String,
+//     firstName : String,
+//     lastName : String
+// });
 
 const userSchem = new mongoose.Schema({
-    userName : {
+    username : {
         type : String,
         required : true,
         unique : true,
@@ -26,13 +26,13 @@ const userSchem = new mongoose.Schema({
         minLeangth : 3
 
     },
-    firstName :{
+    firstname :{
         type : String,
         required : true,
         trim : true,
         maxLength : 30
     },
-    lastName : {
+    lastname : {
         type : String,
         required : true,
         trim : true,
@@ -40,7 +40,7 @@ const userSchem = new mongoose.Schema({
     }
 });
 
-const User = mongoose.model('Users', userSchema);
+const User = mongoose.model('Users', userSchem);
 
 
 module.exports = {
