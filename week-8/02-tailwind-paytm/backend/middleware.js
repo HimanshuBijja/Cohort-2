@@ -13,7 +13,6 @@ async function authMiddleware(req, res, next ){
         const decoded = await jwt.verify(token, JWT_SECRET)
         req.userId = decoded.userId;
         if(decoded.userId){
-            console.log(decoded);
             next();
         }
         else{
@@ -21,7 +20,10 @@ async function authMiddleware(req, res, next ){
         }
     }
     catch(err){
-        return  res.status(403).json({});
+        return  res.status(403).json({
+            msg : "invalid token",
+            error : err.message
+        });
     }
 
 };
