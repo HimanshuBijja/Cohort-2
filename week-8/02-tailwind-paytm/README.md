@@ -1,5 +1,9 @@
 
-## Build a basic version of PayTM
+# Build a basic version of PayTM
+
+## Dashboard
+* User can search for other users available in database
+* When user presses send money it re-directs to /send page
 
 ## Sign up
 **Contains "username", "password", "firstname" and "lastname" feilds** 
