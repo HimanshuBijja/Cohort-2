@@ -10,7 +10,7 @@
 * Entered amount will be deducted from user's account and added to the recipient
 * Transaction takes place when "send" button is pressed
 
-### Sign up
+## Sign up
 **Contains "username", "password", "firstname" and "lastname" feilds** 
 
 1. Username 
@@ -33,7 +33,7 @@
    * No Special Characters
    * Max 30 Characters
 
-### Sign In
+## Sign In
 **Contains "username" and "password" feilds** 
 
 1. Username 
