@@ -1,16 +1,16 @@
 # Build a basic version of PayTM
 **Once Signed up User details will be stored in browser local storage**
 
-## Dashboard
+### Dashboard
 * User can search for other users available in database
 * When user presses send money it re-directs to /send page
 
-## Send Money
+### Send Money
 * User can Enter amount in the input box
 * Entered amount will be deducted from user's account and added to the recipient
 * Transaction takes place when send button is pressed
 
-## Sign up
+### Sign up
 **Contains "username", "password", "firstname" and "lastname" feilds** 
 
 1. Username 
@@ -33,7 +33,7 @@
    * No Special Characters
    * Max 30 Characters
 
-## Sign In
+### Sign In
 **Contains "username" and "password" feilds** 
 
 1. Username 
