@@ -22,3 +22,12 @@ INSERT INTO todos (title, description, userid, done) values ($1, $2, $3, $4) RET
 
 SELECT * FROM users;
 SELECT * FROM users WHERE email = $1;
+
+UPDATE todos SET done = $1 WHERE id = $1;
+
+DELETE FROM todos WHERE id = $1;
+
+SELECT users.*, todos.title, todos.description
+FROM users
+LEFT JOIN todos ON users.id = todos.userid
+where users.id = 1;

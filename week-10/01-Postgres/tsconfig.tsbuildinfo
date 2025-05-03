@@ -1,1 +1,1 @@
-{"root":["./src/create-tables.ts","./src/get-data.ts","./src/insert-data.ts","./src/utils.ts"],"version":"5.8.3"}
+{"root":["./src/create-tables.ts","./src/delete-data.ts","./src/get-data.ts","./src/insert-data.ts","./src/update-data.ts","./src/utils.ts","./src/joins/leftjoin-users-todos.ts"],"version":"5.8.3"}
