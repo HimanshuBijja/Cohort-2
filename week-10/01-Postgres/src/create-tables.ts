@@ -5,11 +5,12 @@ async function createTable() {
     const cilent = await getClient();
 
 	const createUserTableQuery = `
-            CREATE TABLE users (
+        CREATE TABLE users (
             id serial primary key,
             email VARCHAR(255) UNIQUE not NULL,
-            PASSWORD VARCHAR(255) not NULL 
+            user_password VARCHAR(255) not NULL 
         );
+
     `;
     
    await cilent.query(createUserTableQuery)
@@ -22,6 +23,7 @@ async function createTable() {
             userid INTEGER REFERENCES users(id),
             done BOOLEAN DEFAULT FALSE
         );
+
    `
 
    await cilent.query(createTodosQuery);
