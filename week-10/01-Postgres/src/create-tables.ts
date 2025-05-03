@@ -16,7 +16,7 @@ async function createTable() {
    await cilent.query(createUserTableQuery)
 
    const createTodosQuery =  `
-        CREATE TABLE todo(
+        CREATE TABLE todos(
             id serial PRIMARY KEY,
             title TEXT  NOT NULL,
             description TEXT,

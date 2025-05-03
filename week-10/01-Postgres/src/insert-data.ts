@@ -4,7 +4,7 @@ async function createEntries() {
 	const client = await getClient();
 
 	const insertUserText = `INSERT INTO users (email, user_password)  VALUES ($1, $2) RETURNING id;`;
-	const userValues = ["abc@123", "password"];
+	const userValues = ["adddda@123", "password"];
 
 	let response = await client.query(insertUserText, userValues);
 

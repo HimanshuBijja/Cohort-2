@@ -5,7 +5,7 @@ CREATE TABLE users (
 );
 
 
-CREATE TABLE todo(
+CREATE TABLE todos(
     id serial PRIMARY KEY,
     title TEXT  NOT NULL,
     description TEXT,
@@ -15,6 +15,10 @@ CREATE TABLE todo(
 
 
 drop TABLE users;
-drop table todo;
+drop table todos;
 
 INSERT INTO users (email, user_password)  VALUES ($1, $2) RETURNING id;
+INSERT INTO todos (title, description, userid, done) values ($1, $2, $3, $4) RETURNING id;
+
+SELECT * FROM users;
+SELECT * FROM users WHERE email = $1;
