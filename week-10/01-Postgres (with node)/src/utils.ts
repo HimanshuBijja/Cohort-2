@@ -1,7 +1,7 @@
 import { Client } from "pg";
 
 export async function getClient() {
-	const client = new Client("postgresql://postgres:123@localhost:5432/demo");
+	const client = new Client("Connection string");
 	await client.connect();
 	return client;
 }
