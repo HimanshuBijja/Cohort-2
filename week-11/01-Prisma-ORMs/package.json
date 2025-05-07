@@ -1,0 +1,21 @@
+{
+	"name": "01-prisma-orms",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"dev": "tsc -b && node dist/index.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"@types/node": "^22.15.14",
+		"prisma": "^6.7.0",
+		"tsx": "^4.19.4",
+		"typescript": "^5.8.3"
+	},
+	"dependencies": {
+		"@prisma/client": "^6.7.0"
+	}
+}
