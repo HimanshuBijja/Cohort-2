@@ -13,15 +13,16 @@ model User {
   username String @unique
   password String
   age      Int
+  todo     todo[]
 }
 
 model todo {
   id          Int     @id @default(autoincrement())
-  todo        String
+  title        String
   description String
-  done        Boolean @default(false)
+  done        Boolean? @default(false)
+  userid      Int
+  user        User    @relation(fields: [userid], references: [id])
 }
 
-model test {
-  id Int @id
-}
+
