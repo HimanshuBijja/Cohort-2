@@ -1,7 +1,12 @@
-import type{ NextApiRequest, NextApiResponse } from 'next'
+import { NextRequest, NextResponse } from "next/server";
 
-export default async function Signin(req : NextApiRequest, res : NextApiResponse ){
-    res.json({
-        msg : "working"
+export async function POST(req : NextRequest){
+
+    const data =  await req.json();
+    console.log(data)
+
+    return NextResponse.json({
+        msg : "Hello chrome"
+        
     })
 }

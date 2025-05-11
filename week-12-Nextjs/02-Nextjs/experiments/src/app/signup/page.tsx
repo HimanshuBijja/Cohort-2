@@ -1,3 +1,5 @@
+"use client";
+
 import axios from "axios";
 import { stringify } from "querystring";
 import { useState } from "react";
