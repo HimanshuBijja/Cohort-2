@@ -1,7 +1,7 @@
 "use client";
 
 import axios from "axios";
-import { stringify } from "querystring";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function signup() {
@@ -9,6 +9,7 @@ export default function signup() {
   const [password, setPassword] = useState("");
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
+  const router = useRouter();
   return (
     <div className="h-screen flex flex-col justify-center items-center gap-3">
       <div className="text-4xl pb-6">Sign In</div>
@@ -31,8 +32,9 @@ export default function signup() {
               firstname,
               lastname,
             }
-          );
-        }}
+        );
+        // router.push('/');
+    }}
       >
         Sign in
       </button>
