@@ -25,7 +25,7 @@ export default function signup() {
         className="text-amber-200 bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-10 py-2.5 me-2 mb-2"
         onClick={async () => {
           const response = await axios.post(
-            "http://localhost:3000/api/v1/user/details",
+            "http://localhost:3000/api/v1/user/ret",
             {
               username,
               password,
