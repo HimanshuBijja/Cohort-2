@@ -12,7 +12,7 @@ function App(){
 }
 
 function InputBox(){
-  const setInput = useSetRecoilState(inputAtom)
+  const setInput = useSetRecoilState(inputAtom) 
   return (
     <input type="number"  onChange={(e) => {
       setInput(Number(e.target.value))
